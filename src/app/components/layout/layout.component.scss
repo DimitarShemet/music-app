@@ -1,0 +1,11 @@
+.row {
+  cursor: pointer;
+}
+
+tr[mat-header-row] {
+  background-color: #da2032;
+
+  th {
+    color: #ffffff;
+  }
+}
