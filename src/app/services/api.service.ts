@@ -8,6 +8,8 @@ import { ISongsResponse } from '../interfaces/songs-response.interface';
   providedIn: 'root',
 })
 export class ApiService {
+  private url = 'https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem';
+
   private requestOptions = {
     method: 'GET',
     headers: {
@@ -15,14 +17,12 @@ export class ApiService {
       'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com',
     },
   };
+
   constructor(private http: HttpClient) {}
 
   public fetchData(): Observable<ISong[]> {
     return this.http
-      .get<ISongsResponse>(
-        'https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem',
-        this.requestOptions
-      )
+      .get<ISongsResponse>(this.url, this.requestOptions)
       .pipe(map((response) => response.data));
   }
 }
