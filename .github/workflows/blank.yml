@@ -8,6 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
-        run: echo "code was gotten"
-      - name: Print goodbye
-        run: echo "godbye"
+        uses: actions/checkout@v4
+      - name: install node.js
+        uses: actions/setup-node@v4
+        with:
+        node-version: 18
+      - name: install dependencies
+        run: npm ci
+      - name: run tests
+      - run: npm test
