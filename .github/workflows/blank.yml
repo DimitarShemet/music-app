@@ -1,19 +1,9 @@
-name: First workflow
-on: workflow_dispatch 
-jobs: 
- first-job: 
-   runs-on: ubuntu-latest 
-   steps: 
-   - name: Print greeting 
-     run: echo "Hello world"
-   - name: Print goodbye 
-     run: echo "Done, bye" 
-name: Second workflow 
-on: 
- push: 
-  branches: 
-  - 'second-branch'
-jobs: 
+name: Second workflow
+on:
+  push:
+    branches:
+      - "second-branch"
+jobs:
   test:
     runs-on: ubuntu-latest
     steps:
