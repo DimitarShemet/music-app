@@ -8,3 +8,16 @@ jobs:
      run: echo "Hello world"
    - name: Print goodbye 
      run: echo "Done, bye" 
+name: Second workflow 
+on: 
+ push: 
+  branches: 
+  - 'second-branch'
+jobs: 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        run: echo "code was gotten"
+      - name: Print goodbye
+        run: echo "godbye"
